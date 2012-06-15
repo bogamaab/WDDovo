@@ -33,10 +33,8 @@ loadFlickrimage = ->
 
 loadSCsound = ->
   api_key = ($ 'body').data("soundcloud")
-  console.log api_key
   SC.initialize
     client_id: "#{api_key}"
     redirect_uri: "http://wddovo.herokuapp.com/"
-  track_url = 'http://soundcloud.com/forss/flickermood'
-  SC.oEmbed track_url,{ auto_play: true }, (oembed) ->
-    console.log oembed
+  #SC.connect ->
+  SC.Widget.Events.READY
